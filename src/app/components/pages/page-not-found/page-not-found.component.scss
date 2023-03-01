@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+
+  .not-found {
+    text-align: center;
+    line-height: 1.4;
+
+    p {
+      font-size: 6em;
+      font-weight: 700;
+      margin: 0px;
+
+       span {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        background-image: url("../../../../assets/img/emoji.png");
+        background-size: cover;
+        transform: scale(1.2);
+        z-index: -1;
+      }
+
+    }
+
+    h2 {
+      text-transform: uppercase;
+    }
+  }
+}
+
