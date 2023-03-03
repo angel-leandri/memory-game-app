@@ -52,7 +52,7 @@ export class FakeBackendService {
       this.MatrixGame[index] = new Array();
     }
 
-    for (let i = 0; i < this.listMatrixElement.length; i++) {
+    for (const element of this.listMatrixElement) {
       for (let j = 0; j < 2; j++) {
         let randomColumn:number = 0;
         let randomRow:number = 0;
@@ -63,7 +63,7 @@ export class FakeBackendService {
           randomRow = this.getRandomNumber(rows);
         } while(this.MatrixGame[randomColumn][randomRow]);
 
-        this.MatrixGame[randomColumn][randomRow] = this.listMatrixElement[i];
+        this.MatrixGame[randomColumn][randomRow] = element;
       }
     }
   }
@@ -85,5 +85,9 @@ export class FakeBackendService {
 
   private getRandomNumber(max:number):number {
     return Math.floor(Math.random() * max);
+  }
+
+  public gameFinished(valueFinded:any[]): boolean {
+    return this.listMatrixElement.length === valueFinded.length
   }
 }

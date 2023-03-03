@@ -3,11 +3,39 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 
   .matrix-container {
     display: grid;
-    grid-template-columns: repeat(4, 10em);
+    grid-template-columns: repeat(3, 10em);
     grid-gap: 1em;
+    transform: translate(5em, -8em);
+  }
+
+  .info-container {
+    position: fixed;
+    left: 1em;
+    top: 1em;
+    background-color: black;
+    width: 11em;
+    height: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    box-shadow: -9px 5px 12px 0px rgb(0 0 0 / 67%);
+
+    p {
+      color: white;
+      font-weight: bolder;
+      margin: 0;
+    }
+  }
+
+  .return-home-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
   }
 }

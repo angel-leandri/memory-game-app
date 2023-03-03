@@ -1,25 +1,64 @@
 import { MemoryElement } from './../../../services-helpers/fake-backend.service';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { rotate } from 'src/app/services-helpers/animation';
-
+export interface CardDetail {
+  value: number;
+  poistionX: number;
+  postionY: number;
+}
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
   animations: [rotate],
 })
-export class CardComponent implements OnInit {
-
+export class CardComponent {
   @Input() valueCard: MemoryElement = {} as MemoryElement;
-  @Output() cardEvent: EventEmitter<any> = new EventEmitter<any>();
 
-  rotateCardState: boolean = false;
+  @Input() poistionX: number = 0;
 
-  constructor() {}
+  @Input() poistionY: number = 0;
 
-  ngOnInit(): void {}
+  @Input() disabled: boolean = false;
 
-  public retrocardClick(): void {
+  @Output() cardEvent: EventEmitter<CardDetail> =
+    new EventEmitter<CardDetail>();
+
+  public rotateCardState: boolean = true;
+
+  private isCardCliked: boolean = false;
+
+  constructor(public cdr: ChangeDetectorRef) {
+    /* TODO document why this constructor is empty */
+  }
+
+  @Input() set holeCard(holeCardStatus: boolean) {
+    this.cdr.detectChanges();
+
+    if (!this.disabled && holeCardStatus) this.rotateCardState = true;
+  }
+
+  public retroCardClick(): void {
+    this.isCardCliked = true;
     this.rotateCardState = !this.rotateCardState;
+  }
+
+  public finishAnimation(): void {
+    if (this.isCardCliked) {
+      const detailCard: CardDetail = {
+        value: this.valueCard.value,
+        poistionX: this.poistionX,
+        postionY: this.poistionY,
+      };
+      this.cardEvent.emit(detailCard);
+    }
+
+    this.isCardCliked = false;
   }
 }

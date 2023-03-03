@@ -27,3 +27,22 @@ export const rotate = [
     transition('false => true', animate('500ms ease-in')),
   ]),
 ];
+
+export const scaleWord = [
+  trigger('scaleWord', [
+    state(
+      'false',
+      style({
+        transform: 'scale(2)',
+      })
+    ),
+    state(
+      'true',
+      style({
+        transform: 'scale(1)',
+      })
+    ),
+    transition('true => false', animate('1000ms ease-in')),
+    transition('false => true', animate('1000ms ease-out')),
+  ]),
+]

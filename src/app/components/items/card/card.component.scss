@@ -1,19 +1,26 @@
 .card-container {
   width: 100%;
   height: 100%;
+  cursor: pointer;
   div {
     width: 100%;
     height: 100%;
 
     .retro-card {
-      width: 100%;
-      height: 100%;
+      width: 90%;
+      height: 95%;
     }
 
     .front-card {
-      width: 7em;
-      height: 98%;
-      transform: translate(1.5em,-10em);
+      width: 6.5em;
+      height: 85%;
+      position: relative;
+      left: 1.3em;
     }
+  }
+
+  .front-card-contianer {
+    position: relative;
+    top: 9em;
   }
 }

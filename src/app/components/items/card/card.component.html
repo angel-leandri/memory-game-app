@@ -1,8 +1,9 @@
-<div class="card-container" (click)="retrocardClick()">
-  <div [@rotateCard]="rotateCardState">
-    <img src="../../../../assets/img/retro-card.png" class="retro-card"/>
+<div class="card-container" (click)="retroCardClick()" [style.pointer-events]="disabled ? 'none' : 'auto'">
+  <div [@rotateCard]="rotateCardState"  (@rotateCard.done)="finishAnimation()" class="front-card-contianer">
+
+    <div class="front-card" [style.background]="valueCard.backgroundColor"></div>
   </div>
   <div [@rotateCard]="!rotateCardState">
-    <div class="front-card" [style.background]="valueCard.backgroundColor"></div>
+    <img src="../../../../assets/img/retro-card.png" alt="retro-card" class="retro-card"/>
   </div>
 </div>

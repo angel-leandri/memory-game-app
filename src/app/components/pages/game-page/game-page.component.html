@@ -1,9 +1,22 @@
 <div class="main-layout">
+  <div class="info-container">
+    <p>Numero Mosse: {{countMove}}</p>
+  </div>
   <div class="matrix-container">
-    <ng-container *ngFor="let columnValue of matrix; let colum = index">
+    <ng-container *ngFor="let columnValue of matrix; let column = index">
       <ng-container *ngFor="let rowValue of columnValue; let row = index">
-        <app-card [valueCard]="rowValue"></app-card>
+        <app-card
+          [valueCard]="rowValue"
+          [poistionX]="row"
+          [poistionY]="column"
+          [holeCard]="holeCardAction"
+          (cardEvent)="getCard($event)"
+          [disabled]="valueFinded.includes(rowValue.value)"
+        ></app-card>
       </ng-container>
     </ng-container>
+  </div>
+  <div class="return-home-container">
+    <button [routerLink]="['/home']">Torna alla home</button>
   </div>
 </div>

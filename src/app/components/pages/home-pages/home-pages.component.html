@@ -1,6 +1,6 @@
 <div class="main-layout-page">
   <div class="title-container">
-    <h1>Welcome to Memory Game</h1>
+    <h1 [@scaleWord]="scaleWord" (@scaleWord.start)="doScaleAnimation()" (@scaleWord.done)="doScaleAnimation()  " >Welcome to Memory Game</h1>
     <h3>click button to start</h3>
     <button type="button" [routerLink]="['/memory-game']">Start Game</button>
   </div>
