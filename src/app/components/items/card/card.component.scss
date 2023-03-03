@@ -1,0 +1,19 @@
+.card-container {
+  width: 100%;
+  height: 100%;
+  div {
+    width: 100%;
+    height: 100%;
+
+    .retro-card {
+      width: 100%;
+      height: 100%;
+    }
+
+    .front-card {
+      width: 7em;
+      height: 98%;
+      transform: translate(1.5em,-10em);
+    }
+  }
+}

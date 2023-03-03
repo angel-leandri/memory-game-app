@@ -1,0 +1,9 @@
+<div class="main-layout">
+  <div class="matrix-container">
+    <ng-container *ngFor="let columnValue of matrix; let colum = index">
+      <ng-container *ngFor="let rowValue of columnValue; let row = index">
+        <app-card [valueCard]="rowValue"></app-card>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

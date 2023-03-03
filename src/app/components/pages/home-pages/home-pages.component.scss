@@ -1,0 +1,25 @@
+.main-layout-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .title-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+
+    h1 {
+      margin: 0;
+      text-transform: uppercase;
+      font-family: 'Tilt Prism', cursive;
+    }
+
+    h3 {
+      margin: 0;
+      font-family: 'Mynerve', cursive;
+    }
+  }
+}

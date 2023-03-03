@@ -1,0 +1,13 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .matrix-container {
+    display: grid;
+    grid-template-columns: repeat(4, 10em);
+    grid-gap: 1em;
+  }
+}

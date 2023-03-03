@@ -1,0 +1,8 @@
+<div class="card-container" (click)="retrocardClick()">
+  <div [@rotateCard]="rotateCardState">
+    <img src="../../../../assets/img/retro-card.png" class="retro-card"/>
+  </div>
+  <div [@rotateCard]="!rotateCardState">
+    <div class="front-card" [style.background]="valueCard.backgroundColor"></div>
+  </div>
+</div>
